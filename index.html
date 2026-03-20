@@ -3,582 +3,643 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertă Site Web - First Recycler | LAZART STUDIOS</title>
+    <title>Ofertă Lazart Studios | First Recycler - Site de Prezentare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #D4A843;
-            --gold-light: #E8C96A;
-            --gold-dark: #B8892E;
-            --blue: #1a2a4a;
-            --blue-light: #2a3a5a;
-            --blue-dark: #0f1a30;
-            --white: #ffffff;
-            --gray-light: #f5f5f5;
-            --gray: #888;
-            --green: #25D366;
-            --red: #e74c3c;
+            --bg-dark: #0a0a0a;
+            --bg-card: #111111;
+            --bg-elevated: #1a1a1a;
+            --cyan: #0cc0df;
+            --cyan-light: #4dd0e1;
+            --cyan-dark: #0891b2;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --border: #2a2a2a;
+            --accent: #0cc0df;
+            --success: #22c55e;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--blue-dark);
-            color: var(--white);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
             min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         /* Header */
-        header {
+        .header {
             text-align: center;
-            padding: 40px 20px 30px;
-            background: linear-gradient(135deg, var(--blue-dark), var(--blue));
-            border-bottom: 3px solid var(--gold);
+            margin-bottom: 50px;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: var(--gold);
-            margin-bottom: 5px;
+        .lazart-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
 
-        .logo span {
-            font-weight: 300;
-            color: var(--white);
-        }
-
-        header p {
-            color: var(--gray);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        /* Offer Title */
-        .offer-header {
-            text-align: center;
-            padding: 40px 20px 30px;
-        }
-
-        .offer-header h1 {
-            font-size: 2rem;
+        .lazart-logo {
+            max-width: 180px;
+            height: auto;
             margin-bottom: 10px;
-            color: var(--gold);
         }
 
-        .offer-header .subtitle {
-            color: var(--gray);
-            font-size: 1rem;
+        .lazart-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .offer-badge {
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 50%, var(--cyan-light) 100%);
+            color: var(--bg-dark);
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .client-info {
-            background: var(--blue);
-            border-radius: 12px;
-            padding: 20px 25px;
-            margin: 20px 0 30px;
-            border-left: 4px solid var(--gold);
-        }
-
-        .client-info p {
-            margin: 5px 0;
-            font-size: 0.95rem;
-        }
-
-        .client-info strong {
-            color: var(--gold);
-        }
-
-        .client-info a {
-            color: var(--gold-light);
-            text-decoration: none;
-        }
-
-        .client-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Base Package */
-        .base-package {
-            background: linear-gradient(135deg, var(--blue), var(--blue-light));
-            border: 2px solid var(--gold);
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 30px;
-            position: relative;
+        }
+
+        .client-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .client-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .client-tagline {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            margin: 20px auto;
+        }
+
+        /* Calculator Card */
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
             overflow: hidden;
         }
 
-        .base-package::before {
-            content: 'ESSENTIAL';
-            position: absolute;
-            top: 15px;
-            right: -30px;
-            background: var(--gold);
-            color: var(--blue-dark);
-            padding: 5px 40px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            transform: rotate(45deg);
+        .card-header {
+            background: var(--bg-elevated);
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border);
         }
 
-        .base-package h2 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--gold);
-        }
-
-        .base-package .features {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .base-package .features li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-            color: #ddd;
-            font-size: 0.95rem;
-        }
-
-        .base-package .features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .base-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-align: right;
-        }
-
-        .base-price span {
-            font-size: 1rem;
-            color: var(--gray);
-            font-weight: 400;
-        }
-
-        /* Add-ons */
-        .addons-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--white);
-        }
-
-        .addon-card {
-            background: var(--blue);
-            border: 2px solid transparent;
-            border-radius: 12px;
-            padding: 20px 25px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .card-header h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
+            gap: 12px;
+        }
+
+        .card-header h2::before {
+            content: "◆";
+            color: var(--cyan);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        /* Base Price */
+        .base-price {
+            background: linear-gradient(135deg, var(--bg-elevated) 0%, #1f1f1f 100%);
+            border: 1px solid var(--cyan-dark);
+            color: var(--text-primary);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .base-price-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--cyan);
+        }
+
+        .base-price-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .base-price-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        /* Add-ons Grid */
+        .addons-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .addons-section h3::before {
+            content: "+";
+            color: var(--cyan);
+            font-weight: 300;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
-            user-select: none;
+            margin-bottom: 25px;
         }
 
-        .addon-card:hover {
-            border-color: var(--gold-dark);
-            transform: translateX(5px);
+        .addon-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: var(--bg-elevated);
         }
 
-        .addon-card.selected {
-            border-color: var(--gold);
-            background: var(--blue-light);
+        .addon-item:hover {
+            border-color: var(--cyan-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(12, 192, 223, 0.1);
         }
 
-        .addon-toggle {
-            width: 50px;
-            height: 28px;
-            background: #333;
-            border-radius: 14px;
-            position: relative;
-            flex-shrink: 0;
-            transition: background 0.3s;
+        .addon-item.selected {
+            border-color: var(--cyan);
+            background: rgba(12, 192, 223, 0.08);
         }
 
-        .addon-toggle::after {
-            content: '';
-            position: absolute;
+        .addon-checkbox {
             width: 22px;
             height: 22px;
-            background: #666;
-            border-radius: 50%;
-            top: 3px;
-            left: 3px;
-            transition: all 0.3s;
+            border: 2px solid var(--text-muted);
+            border-radius: 6px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
         }
 
-        .addon-card.selected .addon-toggle {
-            background: var(--gold-dark);
+        .addon-item.selected .addon-checkbox {
+            background: var(--cyan);
+            border-color: var(--cyan);
         }
 
-        .addon-card.selected .addon-toggle::after {
-            left: 25px;
-            background: var(--gold);
+        .addon-item.selected .addon-checkbox::after {
+            content: "✓";
+            color: var(--bg-dark);
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .addon-info {
             flex: 1;
         }
 
-        .addon-info h3 {
-            font-size: 1.05rem;
-            margin-bottom: 4px;
-            color: var(--white);
+        .addon-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 3px;
         }
 
-        .addon-info p {
-            font-size: 0.85rem;
-            color: var(--gray);
-            line-height: 1.4;
+        .addon-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
         }
 
         .addon-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--gold-light);
-            white-space: nowrap;
+            font-weight: 600;
+            color: var(--cyan);
+            font-size: 1.1rem;
         }
 
-        /* Summary */
-        .summary {
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-            border-radius: 16px;
+        /* Total Section */
+        .total-section {
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 50%, var(--cyan-light) 100%);
+            color: var(--bg-dark);
             padding: 30px;
-            margin: 40px 0;
-            color: var(--blue-dark);
-        }
-
-        .summary h2 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .summary-items {
-            list-style: none;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.15);
-            padding-bottom: 15px;
-        }
-
-        .summary-items li {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            font-size: 0.95rem;
-        }
-
-        .summary-items li.inactive {
-            opacity: 0.4;
-            text-decoration: line-through;
-        }
-
-        .summary-total {
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 30px;
         }
 
-        .summary-total span {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .total-label {
+            font-size: 1.2rem;
             font-weight: 600;
         }
 
-        .summary-total .total-price {
-            font-size: 2.8rem;
+        .total-amount {
+            font-size: 2.5rem;
             font-weight: 700;
         }
 
-        .summary-total .total-price small {
-            font-size: 1rem;
-            font-weight: 400;
-        }
-
-        /* CTA */
+        /* CTA Section */
         .cta-section {
             text-align: center;
-            padding: 20px 0 40px;
-        }
-
-        .cta-section p {
-            color: var(--gray);
-            margin-bottom: 20px;
-            font-size: 0.9rem;
         }
 
         .cta-button {
+            background: transparent;
+            color: var(--cyan);
+            border: 2px solid var(--cyan);
+            padding: 18px 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: var(--green);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 50px;
+            gap: 12px;
             text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .cta-button:hover {
+            background: var(--cyan);
+            color: var(--bg-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-            background: #20b858;
-        }
-
-        .cta-button svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
+            box-shadow: 0 10px 30px rgba(12, 192, 223, 0.3);
         }
 
         /* Footer */
-        footer {
+        .footer {
             text-align: center;
-            padding: 30px 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--gray);
-            font-size: 0.8rem;
+            padding: 50px 30px 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        footer a {
-            color: var(--gold);
+        .footer .lazart-footer {
+            font-family: 'Playfair Display', serif;
+            color: var(--cyan);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: var(--cyan);
             text-decoration: none;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .footer a:hover {
+            text-decoration: underline;
         }
 
-        .animate {
-            animation: fadeInUp 0.5s ease forwards;
+        /* Summary Preview */
+        .summary-preview {
+            background: var(--bg-elevated);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--cyan);
         }
 
-        .delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .delay-3 { animation-delay: 0.3s; opacity: 0; }
-        .delay-4 { animation-delay: 0.4s; opacity: 0; }
-        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+        .summary-preview h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .summary-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .summary-list li {
+            padding: 6px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-list li:last-child {
+            border-bottom: none;
+        }
+
+        .summary-list li.selected-item {
+            color: var(--text-primary);
+        }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            .offer-header h1 { font-size: 1.5rem; }
-            .base-price { font-size: 2rem; }
-            .summary-total .total-price { font-size: 2.2rem; }
-            .addon-card { flex-wrap: wrap; }
-            .addon-price { width: 100%; text-align: right; margin-top: 5px; }
-            .base-package::before { font-size: 0.6rem; right: -35px; }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .lazart-logo {
+                max-width: 140px;
+            }
+
+            .client-name {
+                font-size: 1.5rem;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+
+            .addons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .base-price {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .total-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .total-amount {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .calculator-card {
+            animation: fadeIn 0.5s ease-out;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="logo">LAZART <span>STUDIOS</span></div>
-    <p>Soluții Web Profesionale</p>
-</header>
-
-<div class="container">
-
-    <div class="offer-header animate">
-        <h1>Ofertă Site Web</h1>
-        <p class="subtitle">Ofertă valabilă 30 de zile de la data emiterii</p>
-    </div>
-
-    <div class="client-info animate delay-1">
-        <p><strong>Client:</strong> Clenciu Daniel Cristian</p>
-        <p><strong>Companie:</strong> First Recycler SRL</p>
-        <p><strong>Website:</strong> <a href="https://firstrecycler.ro" target="_blank">firstrecycler.ro</a></p>
-        <p><strong>Data:</strong> 20 martie 2026</p>
-    </div>
-
-    <!-- Base Package -->
-    <div class="base-package animate delay-2">
-        <h2>Site Web de Prezentare</h2>
-        <ul class="features">
-            <li>Design modern, responsive (mobil + desktop)</li>
-            <li>Până la 5 pagini (Acasă, Despre, Servicii, Portofoliu, Contact)</li>
-            <li>Formular de contact funcțional</li>
-            <li>Optimizare SEO de bază</li>
-            <li>Implementare și lansare inclusă</li>
-            <li>Suport tehnic 30 zile post-lansare</li>
-        </ul>
-        <div class="base-price">500 <span>EUR</span></div>
-    </div>
-
-    <!-- Add-ons -->
-    <div class="addons-section animate delay-3">
-        <h2>🔧 Opțiuni Suplimentare</h2>
-
-        <div class="addon-card" data-price="50" onclick="toggleAddon(this)">
-            <div class="addon-toggle"></div>
-            <div class="addon-info">
-                <h3>Chat Live</h3>
-                <p>Widget de chat live pe site pentru comunicare directă cu vizitatorii în timp real.</p>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="lazart-branding">
+                <div class="lazart-logo"><img src="https://cdn.prod.website-files.com/6740c973a1263e8751de88e2/6740c973a1263e8751de8973_lazart_white_transp.avif" alt="Lazart Studios"></div>
+                <div class="offer-badge">Ofertă Personalizată</div>
             </div>
-            <div class="addon-price">+50 EUR</div>
+            
+            <div class="client-info">
+                <div class="client-label">Ofertă pentru</div>
+                <h1 class="client-name">First Recycler</h1>
+                <p class="client-tagline">by Clenciu Daniel Cristian</p>
+                <div class="divider"></div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 500px; margin: 0 auto;">
+                    Servicii autorizate de colectare deșeuri periculoase și nepericuloase, reciclare, management de mediu 
+                    și ecologizare în regiunea Olteniei. Un site de prezentare modern pentru a consolida prezența digitală 
+                    și a atrage noi parteneri.
+                </p>
+            </div>
+        </header>
+
+        <!-- Calculator Card -->
+        <div class="calculator-card">
+            <div class="card-header">
+                <h2>Calculator Ofertă Website</h2>
+            </div>
+            <div class="card-body">
+                <!-- Base Price -->
+                <div class="base-price">
+                    <div class="base-price-info">
+                        <h3>Site de Prezentare</h3>
+                        <p>Website profesional cu design responsive pentru First Recycler</p>
+                        
+                        <div style="margin-top: 15px;">
+                            <strong style="color: var(--cyan); font-size: 0.9rem;">📄 Pagini incluse:</strong>
+                            <ul style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 8px; padding-left: 16px; line-height: 1.9;">
+                                <li><strong>Homepage</strong> - prezentare companie, servicii principale, avantaje competitive</li>
+                                <li><strong>Despre Noi</strong> - istoric, misiune, certificări autorizate</li>
+                                <li><strong>Servicii</strong> - colectare, reciclare, transport, ecologizare, management mediu</li>
+                                <li><strong>Contact</strong> - formular funcțional, date firmă, zonă de acoperire Oltenia</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <strong style="color: var(--cyan); font-size: 0.9rem;">⚡ Include:</strong>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 8px; line-height: 1.8;">
+                                Design 100% responsive (mobile, tablet, desktop) • Optimizare SEO de bază • Formular de contact funcțional • Implementare și lansare • Suport tehnic 30 zile post-lansare
+                            </p>
+                        </div>
+                    </div>
+                    <div class="base-price-amount">€500</div>
+                </div>
+
+                <!-- Add-ons -->
+                <div class="addons-section">
+                    <h3>Opțiuni Suplimentare</h3>
+                    <div class="addons-grid">
+                        <div class="addon-item" data-price="50" data-name="Chat Live">
+                            <div class="addon-checkbox"></div>
+                            <div class="addon-info">
+                                <div class="addon-name">Chat Live</div>
+                                <div class="addon-desc">Widget de chat live pe site pentru comunicare directă cu vizitatorii în timp real</div>
+                            </div>
+                            <div class="addon-price">€50</div>
+                        </div>
+
+                        <div class="addon-item" data-price="150" data-name="Chat Live cu AI">
+                            <div class="addon-checkbox"></div>
+                            <div class="addon-info">
+                                <div class="addon-name">Chat Live cu AI</div>
+                                <div class="addon-desc">Asistent virtual inteligent care răspunde automat la întrebările frecvente, disponibil 24/7</div>
+                            </div>
+                            <div class="addon-price">€150</div>
+                        </div>
+
+                        <div class="addon-item" data-price="200" data-name="Blog cu 10 Editoriale SEO">
+                            <div class="addon-checkbox"></div>
+                            <div class="addon-info">
+                                <div class="addon-name">Blog cu 10 Editoriale SEO</div>
+                                <div class="addon-desc">Secțiune de blog completă + 10 articole optimizate SEO pentru creșterea vizibilității în Google</div>
+                            </div>
+                            <div class="addon-price">€200</div>
+                        </div>
+
+                        <div class="addon-item" data-price="100" data-name="Google Analytics">
+                            <div class="addon-checkbox"></div>
+                            <div class="addon-info">
+                                <div class="addon-name">Google Analytics – Conectare și Indexare</div>
+                                <div class="addon-desc">Configurare Google Analytics 4, Google Search Console și indexare completă a site-ului</div>
+                            </div>
+                            <div class="addon-price">€100</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="summary-preview">
+                    <h4>Rezumat Selecție</h4>
+                    <ul class="summary-list" id="summaryList">
+                        <li class="selected-item"><span>✓ Site de Prezentare</span><span>€500</span></li>
+                    </ul>
+                </div>
+
+                <!-- Total -->
+                <div class="total-section">
+                    <span class="total-label">Total Estimat</span>
+                    <span class="total-amount" id="totalPrice">€500</span>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-section">
+                    <a href="#" onclick="sendWhatsAppOffer(); return false;" class="cta-button">
+                        <span>Solicită Oferta</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="addon-card" data-price="150" onclick="toggleAddon(this)">
-            <div class="addon-toggle"></div>
-            <div class="addon-info">
-                <h3>Chat Live cu AI</h3>
-                <p>Asistent virtual inteligent care răspunde automat la întrebările frecvente ale clienților, 24/7.</p>
-            </div>
-            <div class="addon-price">+150 EUR</div>
-        </div>
-
-        <div class="addon-card" data-price="200" onclick="toggleAddon(this)">
-            <div class="addon-toggle"></div>
-            <div class="addon-info">
-                <h3>Blog cu 10 Editoriale SEO</h3>
-                <p>Secțiune de blog + 10 articole optimizate SEO pentru creșterea vizibilității în Google.</p>
-            </div>
-            <div class="addon-price">+200 EUR</div>
-        </div>
-
-        <div class="addon-card" data-price="100" onclick="toggleAddon(this)">
-            <div class="addon-toggle"></div>
-            <div class="addon-info">
-                <h3>Google Analytics – Conectare și Indexare</h3>
-                <p>Configurare Google Analytics 4, Google Search Console și indexare completă a site-ului.</p>
-            </div>
-            <div class="addon-price">+100 EUR</div>
-        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="lazart-footer">Lazart Studios</div>
+            <p>Web Design & Development Premium</p>
+            <p style="margin-top: 15px;">
+                <a href="https://lazart.ro" target="_blank">lazart.ro</a> | 
+                <a href="https://wa.me/40750210121" target="_blank">WhatsApp</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">
+                © 2026 Lazart Studios. Toate drepturile rezervate.
+            </p>
+        </footer>
     </div>
 
-    <!-- Summary -->
-    <div class="summary animate delay-4" id="summary">
-        <h2>Sumar Ofertă</h2>
-        <ul class="summary-items" id="summary-items">
-            <li><span>Site Web de Prezentare</span><span>500 EUR</span></li>
-            <li class="inactive" data-addon="chat-live"><span>Chat Live</span><span>50 EUR</span></li>
-            <li class="inactive" data-addon="chat-ai"><span>Chat Live cu AI</span><span>150 EUR</span></li>
-            <li class="inactive" data-addon="blog"><span>Blog + 10 Editoriale SEO</span><span>200 EUR</span></li>
-            <li class="inactive" data-addon="analytics"><span>Google Analytics</span><span>100 EUR</span></li>
-        </ul>
-        <div class="summary-total">
-            <span>Total</span>
-            <div class="total-price" id="total-price">500 <small>EUR</small></div>
-        </div>
-    </div>
+    <script>
+        const BASE_PRICE = 500;
+        let selectedAddons = new Set();
 
-    <!-- CTA -->
-    <div class="cta-section animate delay-5">
-        <p>Ai întrebări sau vrei să discutăm detaliile?</p>
-        <a class="cta-button" id="whatsapp-btn" href="#" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Scrie-ne pe WhatsApp
-        </a>
-    </div>
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateTotal();
+            
+            document.querySelectorAll('.addon-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    toggleAddon(this);
+                });
+            });
+        });
 
-</div>
-
-<footer>
-    <p><strong>LAZART STUDIOS SRL</strong> · CUI 48281539</p>
-    <p>Str. Porțelanului Nr.2 Sc.A Et.2 Ap.14, Cluj-Napoca</p>
-    <p style="margin-top: 8px;"><a href="https://lazart.ro">lazart.ro</a></p>
-</footer>
-
-<script>
-    const addons = [
-        { name: 'Chat Live', price: 50, key: 'chat-live' },
-        { name: 'Chat Live cu AI', price: 150, key: 'chat-ai' },
-        { name: 'Blog + 10 Editoriale SEO', price: 200, key: 'blog' },
-        { name: 'Google Analytics', price: 100, key: 'analytics' }
-    ];
-
-    const basePrice = 500;
-    let selectedAddons = new Set();
-
-    function toggleAddon(card) {
-        card.classList.toggle('selected');
-        const price = parseInt(card.dataset.price);
-        const addon = addons.find(a => a.price === price && !selectedAddons.has(a.key) || selectedAddons.has(a.key));
-
-        // Find by index in DOM
-        const cards = document.querySelectorAll('.addon-card');
-        const index = Array.from(cards).indexOf(card);
-        const addonInfo = addons[index];
-
-        if (card.classList.contains('selected')) {
-            selectedAddons.add(addonInfo.key);
-        } else {
-            selectedAddons.delete(addonInfo.key);
+        function toggleAddon(element) {
+            const name = element.dataset.name;
+            
+            if (selectedAddons.has(name)) {
+                selectedAddons.delete(name);
+                element.classList.remove('selected');
+            } else {
+                selectedAddons.add(name);
+                element.classList.add('selected');
+            }
+            
+            calculateTotal();
         }
 
-        updateSummary();
-    }
+        function calculateTotal() {
+            let total = BASE_PRICE;
+            const summaryList = document.getElementById('summaryList');
+            
+            let summaryHTML = `<li class="selected-item"><span>✓ Site de Prezentare</span><span>€${BASE_PRICE}</span></li>`;
+            
+            document.querySelectorAll('.addon-item.selected').forEach(item => {
+                const price = parseInt(item.dataset.price);
+                const name = item.dataset.name;
+                total += price;
+                summaryHTML += `<li class="selected-item"><span>✓ ${name}</span><span>€${price}</span></li>`;
+            });
+            
+            document.getElementById('totalPrice').textContent = `€${total.toLocaleString()}`;
+            summaryList.innerHTML = summaryHTML;
+        }
 
-    function updateSummary() {
-        const items = document.querySelectorAll('#summary-items li[data-addon]');
-        items.forEach(item => {
-            const key = item.dataset.addon;
-            if (selectedAddons.has(key)) {
-                item.classList.remove('inactive');
-            } else {
-                item.classList.add('inactive');
-            }
-        });
-
-        let total = basePrice;
-        selectedAddons.forEach(key => {
-            const addon = addons.find(a => a.key === key);
-            if (addon) total += addon.price;
-        });
-
-        const totalEl = document.getElementById('total-price');
-        totalEl.innerHTML = `${total} <small>EUR</small>`;
-
-        // Animate price change
-        totalEl.style.transform = 'scale(1.1)';
-        setTimeout(() => totalEl.style.transform = 'scale(1)', 200);
-
-        updateWhatsAppLink(total);
-    }
-
-    function updateWhatsAppLink(total) {
-        const selectedList = Array.from(selectedAddons).map(key => {
-            const a = addons.find(x => x.key === key);
-            return `• ${a.name} (+${a.price} EUR)`;
-        }).join('\n');
-
-        const message = encodeURIComponent(
-            `Bună ziua! Sunt interesat de oferta pentru site web First Recycler.\n\n` +
-            `Pachet de bază: 500 EUR\n` +
-            (selectedList ? `Opțiuni selectate:\n${selectedList}\n` : '') +
-            `Total: ${total} EUR\n\n` +
-            `Aș dori să discutăm detaliile. Mulțumesc!`
-        );
-
-        document.getElementById('whatsapp-btn').href = `https://wa.me/40750210121?text=${message}`;
-    }
-
-    // Initialize WhatsApp link
-    updateWhatsAppLink(basePrice);
-</script>
-
+        function sendWhatsAppOffer() {
+            let total = BASE_PRICE;
+            let message = "*Solicitare Ofertă - First Recycler*%0A%0A";
+            message += "*Pachet de bază - Site de Prezentare:* €500%0A";
+            
+            document.querySelectorAll('.addon-item.selected').forEach(item => {
+                const price = parseInt(item.dataset.price);
+                const name = item.dataset.name;
+                total += price;
+                message += `• ${name}: €${price}%0A`;
+            });
+            
+            message += `%0A*Total estimat: €${total.toLocaleString()}*`;
+            
+            window.open(`https://wa.me/40750210121?text=${message}`, '_blank');
+        }
+    </script>
 </body>
 </html>
